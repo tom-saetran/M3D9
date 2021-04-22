@@ -185,24 +185,30 @@
             const openResultsModal = async id => {
                 const details = await loadData(endpoint + id)
 
+                const modalHeader = document.querySelector("#resultsModal .modal-header")
                 const modalBody = document.querySelector("#resultsModal .modal-body")
                 const modalFooter = document.querySelector("#resultsModal .modal-footer")
 
+                modalHeader.innerHTML = ""
+                modalHeader.innerHTML = `
+                    <h4 class="modal-title text-center">${details.name}</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                `
+
                 modalBody.innerHTML = ""
                 modalBody.innerHTML += `
-                <p>Name: ${details.name}</p>
-                <p>Description: ${details.description}</p>
-                <p>Brand: ${details.brand}</p>
-                <p>Price: $${details.price}</p>
-                <img class="img-fluid" src="${details.imageUrl}" alt="${details.name}"/>
+                    <p>Description: ${details.description}</p>
+                    <p>Brand: ${details.brand}</p>
+                    <p>Price: $${details.price}</p>
+                    <img class="img-fluid" src="${details.imageUrl}" alt="${details.name}"/>
                 `
 
                 modalFooter.innerHTML = ""
                 modalFooter.innerHTML += `
-                <small class="text-muted mr-auto">${details._id}</small>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-dismiss="modal" onclick="openDeleteModal('${details._id}')"><i class="bi bi-trash"></i></button>
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal" data-dismiss="modal" onclick="openEditModal('${details._id}')"><i class="bi bi-pencil"></i></button>
-                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <small class="text-muted mr-auto">${details._id}</small>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-dismiss="modal" onclick="openDeleteModal('${details._id}')"><i class="bi bi-trash"></i></button>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal" data-dismiss="modal" onclick="openEditModal('${details._id}')"><i class="bi bi-pencil"></i></button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
                 `
             }
             const openEditModal = async id => {
