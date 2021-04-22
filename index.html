@@ -47,8 +47,8 @@
         <div class="modal fade pt-5" id="resultsModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title text-center">Details</h4>
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">Details</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body"></div>
@@ -61,8 +61,8 @@
         <div class="modal fade pt-5" id="editModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title text-center">Edit Details</h4>
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">Edit Details</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body"></div>
@@ -75,8 +75,8 @@
         <div class="modal fade pt-5" id="deleteModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title text-center">Are You Sure?</h4>
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">Are You Sure?</h4>
                     </div>
                     <div class="modal-body"></div>
                     <div class="modal-footer"></div>
@@ -88,8 +88,8 @@
         <div class="modal fade pt-5" id="newModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title text-center">New Entry</h4>
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">New Entry</h4>
                     </div>
                     <div class="modal-body">
                         <form onsubmit="postData(event)">
@@ -312,10 +312,10 @@
 
                 if (!items.length > 0)
                     parent.innerHTML += `
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>No Entries!</strong> You should create some in the back office.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                    <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                        <strong>No Entries found!</strong> Please create an entry to continue.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     `
