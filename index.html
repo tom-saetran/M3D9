@@ -11,15 +11,15 @@
 
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
             <a class="navbar-brand" href="#">
                 CRUD Control Center<small><sub>TM</sub></small>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav flex-row justify-content-around">
+            <div class="collapse navbar-collapse justify-content-" id="navbarNavAltMarkup">
+                <div class="navbar-nav flex-grow-1 flex-row justify-content-around">
                     <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-link" data-toggle="modal" data-target="#newModal" href="#">Post New</a>
                 </div>
@@ -47,7 +47,7 @@
         <div class="modal fade pt-5" id="resultsModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header text-center">
+                    <div class="modal-header">
                         <h4 class="modal-title">Details</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
@@ -61,7 +61,7 @@
         <div class="modal fade pt-5" id="editModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header text-center">
+                    <div class="modal-header">
                         <h4 class="modal-title">Edit Details</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
@@ -75,7 +75,7 @@
         <div class="modal fade pt-5" id="deleteModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header text-center">
+                    <div class="modal-header">
                         <h4 class="modal-title">Are You Sure?</h4>
                     </div>
                     <div class="modal-body"></div>
@@ -88,11 +88,11 @@
         <div class="modal fade pt-5" id="newModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h4 class="modal-title">New Entry</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form onsubmit="postData(event)">
+                    <form onsubmit="postData(event)">
+                        <div class="modal-header">
+                            <h4 class="modal-title">New Entry</h4>
+                        </div>
+                        <div class="modal-body">
                             <label class="ml-2" for="post-name">Name</label>
                             <input id="post-name" type="text" class="form-control mb-2" placeholder="Name..." required />
 
@@ -107,13 +107,11 @@
 
                             <label class="ml-2" for="post-price">Price</label>
                             <input id="post-price" type="number" class="form-control mb-2" placeholder="Price..." step="0.01" required />
-
-                            <div class="d-flex">
-                                <input type="submit" class="btn btn-success w-50 mx-auto mt-3" value="Create" />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-success w-50 mx-auto" value="Create" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -176,11 +174,11 @@
                 }
             }
             const editEntry = async id => {
-                const nameField = document.querySelector("#editForm #name")
-                const descField = document.querySelector("#editForm #description")
-                const brandField = document.querySelector("#editForm #brand")
-                const imgUrlField = document.querySelector("#editForm #imageUrl")
-                const priceField = document.querySelector("#editForm #price")
+                const nameField = document.querySelector("#name")
+                const descField = document.querySelector("#description")
+                const brandField = document.querySelector("#brand")
+                const imgUrlField = document.querySelector("S#imageUrl")
+                const priceField = document.querySelector("#price")
 
                 const fields = {
                     name: nameField.value,
